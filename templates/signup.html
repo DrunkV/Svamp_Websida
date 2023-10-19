@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign-Up Page</title>
+    <style>
+        @import url(static/css/signup.css);
+    </style>
+    <script type="text/javascript">
+        function signup() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // In a real application, you should perform more robust validation
+            // and potentially store the user information in a database.
+
+            // For this example, we'll simply show an alert with the entered data.
+            alert("Sign-up successful!\nUsername: " + username + "\nPassword: " + password);
+
+            // Clear the form fields after sign-up
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        }
+    </script>
+</head>
+<body>
+    <div id="signup-form">
+        <h2>Sign Up</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="button" onclick="signup()">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <script type="text/javascript">
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // In a real application, you would validate the username and password
+            // against a database or some other authentication mechanism.
+            // For this example, we'll use a simple check.
+
+            if (username === "user" && password === "password") {
+                // Successful login
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("welcome-message").innerHTML = "Welcome, " + username + "!";
+                document.getElementById("logout-button").style.display = "block";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+
+        function logout() {
+            document.getElementById("login-form").style display = "block";
+            document.getElementById("welcome-message").innerHTML = "";
+            document.getElementById("logout-button").style.display = "none";
+            document.getElementById("username").value = ""; // Clear username field
+            document.getElementById("password").value = ""; // Clear password field
+        }
+    </script>
+    <style>
+        @import url(static/css/login.css);
+    </style>
+</head>
+<body>
+    <div id="login-form">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <div id="welcome-message"></div>
+    <button id="logout-button" style="display: none;" onclick="logout()">Logout</button>
+</body>
+</html>
